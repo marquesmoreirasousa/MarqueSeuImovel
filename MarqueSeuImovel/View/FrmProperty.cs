@@ -57,6 +57,9 @@ namespace MarqueSeuImovel
                 pnlOptions.Visible = true;
         }
 
-        
+        private void FrmProperty_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

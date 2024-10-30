@@ -13,8 +13,13 @@ namespace MarqueSeuImovel.Model
         public string City { get; set; }
         public float Price { get; set; }
 
-        public Property(string objective, 
-            string city, float price)
+        public Property(int codProperty, string objective, 
+            string city, float price): this (objective, city, price)
+        {
+            CodProperty = codProperty;
+        }
+
+        public Property(string objective, string city, float price)
         {
             Objective = objective;
             City = city;

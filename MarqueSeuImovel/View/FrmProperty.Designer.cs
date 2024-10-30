@@ -62,8 +62,15 @@
             this.txbDescription = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.pcbImage = new System.Windows.Forms.PictureBox();
+            this.pnlProperty = new System.Windows.Forms.Panel();
+            this.ltvProperty = new System.Windows.Forms.ListView();
+            this.clhCod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clhObjective = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clhCity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clhPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImage)).BeginInit();
+            this.pnlProperty.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCode
@@ -416,12 +423,55 @@
             this.pcbImage.TabIndex = 24;
             this.pcbImage.TabStop = false;
             // 
+            // pnlProperty
+            // 
+            this.pnlProperty.Controls.Add(this.ltvProperty);
+            this.pnlProperty.Location = new System.Drawing.Point(908, 61);
+            this.pnlProperty.Name = "pnlProperty";
+            this.pnlProperty.Size = new System.Drawing.Size(474, 338);
+            this.pnlProperty.TabIndex = 25;
+            // 
+            // ltvProperty
+            // 
+            this.ltvProperty.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clhCod,
+            this.clhObjective,
+            this.clhCity,
+            this.clhPrice});
+            this.ltvProperty.HideSelection = false;
+            this.ltvProperty.Location = new System.Drawing.Point(3, 3);
+            this.ltvProperty.Name = "ltvProperty";
+            this.ltvProperty.Size = new System.Drawing.Size(468, 332);
+            this.ltvProperty.TabIndex = 0;
+            this.ltvProperty.UseCompatibleStateImageBehavior = false;
+            this.ltvProperty.View = System.Windows.Forms.View.Details;
+            // 
+            // clhCod
+            // 
+            this.clhCod.Text = "Código";
+            // 
+            // clhObjective
+            // 
+            this.clhObjective.Text = "Objetivo";
+            this.clhObjective.Width = 120;
+            // 
+            // clhCity
+            // 
+            this.clhCity.Text = "Cidade";
+            this.clhCity.Width = 194;
+            // 
+            // clhPrice
+            // 
+            this.clhPrice.Text = "Preço (R$)";
+            this.clhPrice.Width = 90;
+            // 
             // FrmProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OrangeRed;
-            this.ClientSize = new System.Drawing.Size(910, 506);
+            this.ClientSize = new System.Drawing.Size(1394, 506);
+            this.Controls.Add(this.pnlProperty);
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.pcbImage);
             this.Controls.Add(this.txbDescription);
@@ -454,9 +504,11 @@
             this.Name = "FrmProperty";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MarqueSeuImóvel";
+            this.Load += new System.EventHandler(this.FrmProperty_Load);
             this.pnlOptions.ResumeLayout(false);
             this.pnlOptions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImage)).EndInit();
+            this.pnlProperty.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,6 +548,12 @@
         private System.Windows.Forms.TextBox txbDescription;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.PictureBox pcbImage;
+        private System.Windows.Forms.Panel pnlProperty;
+        private System.Windows.Forms.ListView ltvProperty;
+        private System.Windows.Forms.ColumnHeader clhCod;
+        private System.Windows.Forms.ColumnHeader clhObjective;
+        private System.Windows.Forms.ColumnHeader clhCity;
+        private System.Windows.Forms.ColumnHeader clhPrice;
     }
 }
 
