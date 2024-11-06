@@ -32,6 +32,7 @@
             this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.txbUser = new System.Windows.Forms.TextBox();
             this.panelBackLogin = new System.Windows.Forms.Panel();
+            this.btnInsertProperty = new System.Windows.Forms.Button();
             this.lblPass = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             // panelBackLogin
             // 
             this.panelBackLogin.BackColor = System.Drawing.Color.OrangeRed;
+            this.panelBackLogin.Controls.Add(this.btnInsertProperty);
             this.panelBackLogin.Controls.Add(this.lblPass);
             this.panelBackLogin.Controls.Add(this.btnLogin);
             this.panelBackLogin.Controls.Add(this.lblUser);
@@ -76,6 +78,18 @@
             this.panelBackLogin.Name = "panelBackLogin";
             this.panelBackLogin.Size = new System.Drawing.Size(370, 450);
             this.panelBackLogin.TabIndex = 2;
+            // 
+            // btnInsertProperty
+            // 
+            this.btnInsertProperty.Font = new System.Drawing.Font("Segoe Fluent Icons", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertProperty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(37)))), ((int)(((byte)(87)))));
+            this.btnInsertProperty.Location = new System.Drawing.Point(135, 399);
+            this.btnInsertProperty.Name = "btnInsertProperty";
+            this.btnInsertProperty.Size = new System.Drawing.Size(116, 35);
+            this.btnInsertProperty.TabIndex = 6;
+            this.btnInsertProperty.Text = "Cadastrar";
+            this.btnInsertProperty.UseVisualStyleBackColor = true;
+            this.btnInsertProperty.Click += new System.EventHandler(this.btnInsertProperty_Click);
             // 
             // lblPass
             // 
@@ -98,7 +112,7 @@
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // lblUser
             // 
@@ -121,7 +135,7 @@
             this.txbPass.Size = new System.Drawing.Size(284, 32);
             this.txbPass.TabIndex = 2;
             // 
-            // FrmLogin
+            // FrmBroker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,7 +148,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmLogin";
+            this.Name = "FrmBroker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MarqueSeuImóvel";
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
@@ -153,5 +167,6 @@
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblPass;
+        private System.Windows.Forms.Button btnInsertProperty;
     }
 }

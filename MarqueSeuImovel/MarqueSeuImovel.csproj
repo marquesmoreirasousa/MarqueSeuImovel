@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Connection.cs" />
+    <Compile Include="Model\Broker.cs" />
+    <Compile Include="Model\BrokerDAO.cs" />
     <Compile Include="Model\Property.cs" />
     <Compile Include="Model\PropertyDAO.cs" />
     <Compile Include="View\FrmLogin.cs">
@@ -54,6 +56,12 @@
     </Compile>
     <Compile Include="View\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmBroker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmBroker.Designer.cs">
+      <DependentUpon>FrmBroker.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -71,6 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmBroker.resx">
+      <DependentUpon>FrmBroker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

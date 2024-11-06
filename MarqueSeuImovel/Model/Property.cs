@@ -25,5 +25,11 @@ namespace MarqueSeuImovel.Model
             City = city;
             Price = price;
         }
+
+        public Property(int codProperty, string city)
+        {
+            CodProperty = codProperty;
+            City = city;
+        }
     }
 }

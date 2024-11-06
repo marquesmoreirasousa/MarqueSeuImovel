@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarqueSeuImovel.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,18 @@ namespace MarqueSeuImovel
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             //Testando autenticação do usuário
-            if (txbUser.Text == "admin" && txbPass.Text == "123456")
+            Property prop = new Property(int.Parse(txbUser.Text), txbPass.Text);
+            PropertyDAO propertyDAO = new PropertyDAO();
+
+            if (propertyDAO.ValidateLogin(prop))
             {
                 txbUser.Text = String.Empty; //Limpa o campo de usuário
                 txbPass.Text = String.Empty; //Limpa o campo de senha
                 txbUser.Focus(); //Coloca o foco no campo de usuário
+
                 FrmPrincipal principal = new FrmPrincipal();
                 this.Visible = false; //Esconder a tela de login
                 principal.ShowDialog(); //Abre a tela principal
@@ -39,5 +44,9 @@ namespace MarqueSeuImovel
             }
         }
 
+        private void btnInsertProperty_Click(object sender, EventArgs e)
+        {
+            new FrmBroker().ShowDialog();
+        }
     }
 }
