@@ -12,9 +12,9 @@ namespace MarqueSeuImovel.Controller
     {
         private SqlConnection con;
         private string DataBase = "BDMARQUESEUIMOVEL";
-        private string Server = "sqlexpress";
-        private string Username = "aluno";
-        private string Password = "aluno";
+        //private string Server = "sqlexpress";
+        //private string Username = "aluno";
+        //private string Password = "aluno";
         public Connection() {
             //string stringConnection = 
             //@"Data Source = " + Server

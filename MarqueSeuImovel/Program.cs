@@ -16,7 +16,7 @@ namespace MarqueSeuImovel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmBroker());
+            Application.Run(new FrmLogin());
         }
     }
 }

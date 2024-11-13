@@ -20,11 +20,11 @@ namespace MarqueSeuImovel
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-            //Testando autenticação do usuário
-            Property prop = new Property(int.Parse(txbUser.Text), txbPass.Text);
-            PropertyDAO propertyDAO = new PropertyDAO();
+            
+            Broker broker = new Broker(txbUser.Text, txbPass.Text);
+            BrokerDAO brokerDAO = new BrokerDAO();
 
-            if (propertyDAO.ValidateLogin(prop))
+            if (brokerDAO.ValidateLogin(broker))
             {
                 txbUser.Text = String.Empty; //Limpa o campo de usuário
                 txbPass.Text = String.Empty; //Limpa o campo de senha

@@ -136,36 +136,6 @@ namespace MarqueSeuImovel.Model
 
             return props;
         }
-        public bool ValidateLogin(Property prop)
-        {
-
-            Command.Connection = Connect.ReturnConnection();
-            Command.CommandText = "SELECT * FROM Property WHERE " +
-                                  "CodProperty = @codProperty AND " +
-                                  "City = @city";
-            Command.Parameters.AddWithValue("@codProperty", prop.CodProperty);
-            Command.Parameters.AddWithValue("@city", prop.City);
-
-            try
-            {
-                SqlDataReader rd = Command.ExecuteReader();
-                if (rd.HasRows)
-                {
-                    rd.Close();
-                    return true;
-                }
-            }
-            catch (Exception err)
-            {
-                throw new Exception("Erro: Problemas ao realizar " +
-                    "leitura de imóveis no banco.\n" + err.Message);
-            }
-            finally
-            {
-                Connect.CloseConnection();
-            }
-
-            return false;
-        }
+        
     }
 }

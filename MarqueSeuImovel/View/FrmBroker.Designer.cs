@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBroker));
             this.txbBroker = new System.Windows.Forms.TextBox();
             this.panelBackBroker = new System.Windows.Forms.Panel();
@@ -46,6 +47,17 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.lblBroker = new System.Windows.Forms.Label();
             this.txbBrokerCode = new System.Windows.Forms.TextBox();
+            this.ltvBroker = new System.Windows.Forms.ListView();
+            this.clmId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmBrokerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmState = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmCodeArea = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmTelephone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.ttpBroker = new System.Windows.Forms.ToolTip(this.components);
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.panelBackBroker.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,15 +84,13 @@
             this.panelBackBroker.Controls.Add(this.txbEmail);
             this.panelBackBroker.Controls.Add(this.lblState);
             this.panelBackBroker.Controls.Add(this.cmbState);
-            this.panelBackBroker.Controls.Add(this.btnInsert);
             this.panelBackBroker.Controls.Add(this.lblBrokerCode);
-            this.panelBackBroker.Controls.Add(this.btnClear);
             this.panelBackBroker.Controls.Add(this.lblBroker);
             this.panelBackBroker.Controls.Add(this.txbBrokerCode);
             this.panelBackBroker.Controls.Add(this.txbBroker);
             this.panelBackBroker.Location = new System.Drawing.Point(12, 12);
             this.panelBackBroker.Name = "panelBackBroker";
-            this.panelBackBroker.Size = new System.Drawing.Size(785, 305);
+            this.panelBackBroker.Size = new System.Drawing.Size(785, 244);
             this.panelBackBroker.TabIndex = 2;
             // 
             // lblPassword
@@ -101,6 +111,7 @@
             this.txbPassword.MaxLength = 20;
             this.txbPassword.Multiline = true;
             this.txbPassword.Name = "txbPassword";
+            this.txbPassword.PasswordChar = '*';
             this.txbPassword.Size = new System.Drawing.Size(262, 32);
             this.txbPassword.TabIndex = 15;
             // 
@@ -219,7 +230,7 @@
             // 
             this.btnInsert.Font = new System.Drawing.Font("Segoe Fluent Icons", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(37)))), ((int)(((byte)(87)))));
-            this.btnInsert.Location = new System.Drawing.Point(639, 245);
+            this.btnInsert.Location = new System.Drawing.Point(805, 161);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(118, 43);
             this.btnInsert.TabIndex = 6;
@@ -243,13 +254,14 @@
             // 
             this.btnClear.Font = new System.Drawing.Font("Segoe Fluent Icons", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(37)))), ((int)(((byte)(87)))));
-            this.btnClear.Location = new System.Drawing.Point(530, 245);
+            this.btnClear.Location = new System.Drawing.Point(805, 51);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(93, 45);
+            this.btnClear.Size = new System.Drawing.Size(118, 45);
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Limpar";
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // lblBroker
             // 
@@ -272,14 +284,103 @@
             this.txbBrokerCode.Size = new System.Drawing.Size(150, 32);
             this.txbBrokerCode.TabIndex = 2;
             // 
+            // ltvBroker
+            // 
+            this.ltvBroker.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmId,
+            this.clmBrokerName,
+            this.clmCode,
+            this.clmState,
+            this.clmCodeArea,
+            this.clmTelephone,
+            this.clmEmail});
+            this.ltvBroker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ltvBroker.FullRowSelect = true;
+            this.ltvBroker.HideSelection = false;
+            this.ltvBroker.Location = new System.Drawing.Point(12, 282);
+            this.ltvBroker.Name = "ltvBroker";
+            this.ltvBroker.Size = new System.Drawing.Size(911, 348);
+            this.ltvBroker.TabIndex = 7;
+            this.ttpBroker.SetToolTip(this.ltvBroker, "Clique duas vezes para alterar um corretor.");
+            this.ltvBroker.UseCompatibleStateImageBehavior = false;
+            this.ltvBroker.View = System.Windows.Forms.View.Details;
+            this.ltvBroker.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ltvBroker_MouseDoubleClick);
+            // 
+            // clmId
+            // 
+            this.clmId.Text = "ID";
+            // 
+            // clmBrokerName
+            // 
+            this.clmBrokerName.Text = "Corretor";
+            this.clmBrokerName.Width = 243;
+            // 
+            // clmCode
+            // 
+            this.clmCode.Text = "CRECI";
+            this.clmCode.Width = 74;
+            // 
+            // clmState
+            // 
+            this.clmState.Text = "Estado";
+            this.clmState.Width = 70;
+            // 
+            // clmCodeArea
+            // 
+            this.clmCodeArea.Text = "DDD";
+            this.clmCodeArea.Width = 49;
+            // 
+            // clmTelephone
+            // 
+            this.clmTelephone.Text = "Telefone";
+            this.clmTelephone.Width = 120;
+            // 
+            // clmEmail
+            // 
+            this.clmEmail.Text = "Email";
+            this.clmEmail.Width = 353;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Segoe Fluent Icons", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(37)))), ((int)(((byte)(87)))));
+            this.btnDelete.Location = new System.Drawing.Point(805, 213);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(118, 43);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "Excluir";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe Fluent Icons", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(37)))), ((int)(((byte)(87)))));
+            this.btnUpdate.Location = new System.Drawing.Point(805, 106);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(118, 45);
+            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.Text = "Editar";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // FrmBroker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OrangeRed;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(809, 329);
+            this.ClientSize = new System.Drawing.Size(935, 642);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.ltvBroker);
             this.Controls.Add(this.panelBackBroker);
+            this.Controls.Add(this.btnInsert);
+            this.Controls.Add(this.btnClear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -287,6 +388,7 @@
             this.Name = "FrmBroker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MarqueSeuImóvel";
+            this.Load += new System.EventHandler(this.FrmBroker_Load);
             this.panelBackBroker.ResumeLayout(false);
             this.panelBackBroker.PerformLayout();
             this.ResumeLayout(false);
@@ -311,5 +413,16 @@
         private System.Windows.Forms.TextBox txbCodeArea;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txbPassword;
+        private System.Windows.Forms.ListView ltvBroker;
+        private System.Windows.Forms.ColumnHeader clmId;
+        private System.Windows.Forms.ColumnHeader clmBrokerName;
+        private System.Windows.Forms.ColumnHeader clmCode;
+        private System.Windows.Forms.ColumnHeader clmState;
+        private System.Windows.Forms.ColumnHeader clmCodeArea;
+        private System.Windows.Forms.ColumnHeader clmTelephone;
+        private System.Windows.Forms.ColumnHeader clmEmail;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ToolTip ttpBroker;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

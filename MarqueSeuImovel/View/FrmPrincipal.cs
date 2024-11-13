@@ -17,10 +17,16 @@ namespace MarqueSeuImovel
             InitializeComponent();
         }
 
-        private void tsmCadastro_Click(object sender, EventArgs e)
+
+        private void tsmProperty_Click(object sender, EventArgs e)
         {
             FrmProperty frmProperty = new FrmProperty();
             frmProperty.ShowDialog();
+        }
+
+        private void tsmBroker_Click(object sender, EventArgs e)
+        {
+            new FrmBroker().ShowDialog();
         }
     }
 }

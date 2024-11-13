@@ -65,7 +65,7 @@ namespace MarqueSeuImovel.Model
             Password = @password
             WHERE Id = @id";
 
-            Command.Parameters.AddWithValue("@ide", broker.Id);
+            Command.Parameters.AddWithValue("@id", broker.Id);
             Command.Parameters.AddWithValue("@brokerName", broker.BrokerName);
             Command.Parameters.AddWithValue("@brokerCode", broker.BrokerCode);
             Command.Parameters.AddWithValue("@state", broker.State);
@@ -155,7 +155,7 @@ namespace MarqueSeuImovel.Model
 
             Command.Connection = Connect.ReturnConnection();
             Command.CommandText = "SELECT * FROM Broker WHERE " +
-                                  "Id = @brokerCode AND " +
+                                  "BrokerCode = @brokerCode AND " +
                                   "Password = @password";
             Command.Parameters.AddWithValue("@brokerCode", broker.BrokerCode);
             Command.Parameters.AddWithValue("@password", broker.Password);
